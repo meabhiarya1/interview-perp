@@ -1,51 +1,43 @@
 import React, { useEffect, useRef } from "react";
 
 const Test = () => {
-  const handleClick = (child) => {
-    console.log(child);
-  };
+  function OuterFunc() {
+    let a = 1;
 
-  const inputRef = useRef(null);
+    function innerFunc() {
+      // let a = 2;
+      // console.log(a);
+      return a;
+      // console.log(b);
+    }
+
+    console.log(innerFunc());
+
+    function innerFuncTwo() {
+      console.log(a);
+    }
+    // innerFuncTwo();
+  } //Lexical Scope
+
+  function init() {
+    let name = "Mozilla";
+    function displayName() {
+      console.log(name);
+    }
+    return displayName;
+  }
+  // Closures
+  const myFun = init();
+
+  myFun();
+
+  // useEffect(() => {
+  //   OuterFunc();
+  // }, []);
 
 
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
 
-  return (
-    // <div>
-    //   <div
-    //     className="border-2 border-black rounded-xl  w-1/2 bg-black text-white cursor-pointer"
-    //     onClick={(e) => {
-    //       handleClick("parent");
-    //     }}
-    //   >
-    //     {" "}
-    //     {/* Parent */}
-    //     <div
-    //       className="border-2 border-black rounded-xl   bg-purple-600 text-white cursor-pointer"
-    //       onClick={(e) => {
-    //         handleClick("child 2");
-    //       }}
-    //     >
-    //       {" "}
-    //       {/* Child 2 */}
-    //       <div
-    //         className="border-2 border-black rounded-xl   bg-green-600 text-white cursor-pointer"
-    //         onClick={(e) => {
-    //           handleClick("child 3");
-    //         }}
-    //       >
-    //         Child 3
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-
-    <div className="border-2 border-black rounded-xl  w-1/2 bg-black cursor-pointer">
-      <input type="text" ref={inputRef} defaultValue={"hello"} />
-    </div>
-  );
+  return <div>{/* Lexical Scope */}</div>;
 };
 
 export default Test;
