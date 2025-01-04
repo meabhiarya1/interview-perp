@@ -1,16 +1,16 @@
-import "./App.css"; 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
-import Dashboard from "./Comp/Dashboard.jsx"; 
-import Profile from "./Comp/Profile.jsx"; 
-import withAuth from "./HOC/withAuth.jsx";  // Import the `withAuth` Higher-Order Component (HOC) to wrap components with authentication logic.
-import Test from "./Comp/Test.jsx"; 
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./Comp/Dashboard.jsx";
+import Profile from "./Comp/Profile.jsx";
+import withAuth from "./HOC/withAuth.jsx"; // Import the `withAuth` Higher-Order Component (HOC) to wrap components with authentication logic.
+import Test from "./Comp/Test.jsx";
 import PromiseConcept from "./Comp/PromiseConcept.jsx";
-
+import Debouncing from "./Comp/Debouncing.jsx";
+import Throttling from "./Comp/Throttling.jsx";
 // Define the main App component that manages routing and page rendering.
 function App() {
-  
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
-  const ProfileAuth = withAuth(Profile);  // Wrap the `Profile` component with the `withAuth` HOC to add authentication logic.
+  const ProfileAuth = withAuth(Profile); // Wrap the `Profile` component with the `withAuth` HOC to add authentication logic.
 
   // Return the application's structure and routes.
   return (
@@ -31,8 +31,14 @@ function App() {
           {/* Define a route for the test page, rendering the `Test` component. */}
           <Route path="/test" element={<Test />} />
 
-           {/* Define a route for the test page, rendering the `Test` component. */}
-           <Route path="/promise" element={<PromiseConcept />} />
+          {/* Define a route for the promise, rendering the `Promise` component. */}
+          <Route path="/promise" element={<PromiseConcept />} />
+
+          {/* Define a route for the debounce, rendering the `Debounce` component. */}
+          <Route path="/debounce" element={<Debouncing />} />
+
+          {/* Define a route for the throttling, rendering the `Throttling` component. */}
+          <Route path="/throttling" element={<Throttling />} />
         </Routes>
       </Router>
     </>
