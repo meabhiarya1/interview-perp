@@ -49,3 +49,16 @@ export default Debouncing;
 // If you type continuously, no logs will appear.
 // When you stop typing for 500ms, the console.log will trigger with a timestamp.
 // ✅ The delay will always be exactly 500ms after the last key press.
+
+
+// Difference Between Throttling & Debouncing:
+
+// Feature	                 Throttling	                             Debouncing
+// Execution Frequency	     Limits execution to fixed intervals	   Executes after inactivity
+// Use Case	                 Scroll, resize, mouse events	           Search input, form validation
+// Control Mechanism	       Executes every delay ms	               Waits delay ms after last event
+
+
+// ✅ Summary:
+// Throttling: Limits function execution to once every 1500ms.
+// Debouncing: Waits until the user stops typing for a delay duration before executing.
