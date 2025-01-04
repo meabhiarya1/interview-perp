@@ -29,7 +29,7 @@ const Test = () => {
   // Closures
   const myFun = init();
 
-  myFun();
+  // myFun();
 
   // useEffect(() => {
   //   OuterFunc();

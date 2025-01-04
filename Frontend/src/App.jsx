@@ -4,6 +4,7 @@ import Dashboard from "./Comp/Dashboard.jsx";
 import Profile from "./Comp/Profile.jsx"; 
 import withAuth from "./HOC/withAuth.jsx";  // Import the `withAuth` Higher-Order Component (HOC) to wrap components with authentication logic.
 import Test from "./Comp/Test.jsx"; 
+import PromiseConcept from "./Comp/PromiseConcept.jsx";
 
 // Define the main App component that manages routing and page rendering.
 function App() {
@@ -29,6 +30,9 @@ function App() {
 
           {/* Define a route for the test page, rendering the `Test` component. */}
           <Route path="/test" element={<Test />} />
+
+           {/* Define a route for the test page, rendering the `Test` component. */}
+           <Route path="/promise" element={<PromiseConcept />} />
         </Routes>
       </Router>
     </>
