@@ -8,6 +8,7 @@ import PromiseConcept from "./Comp/PromiseConcept.jsx";
 import Debouncing from "./Comp/Debouncing.jsx";
 import Throttling from "./Comp/Throttling.jsx";
 import Currying from "./Comp/Currying.jsx";
+import Memoization from "./Comp/Memoization.jsx";
 // Define the main App component that manages routing and page rendering.
 function App() {
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
@@ -41,8 +42,11 @@ function App() {
           {/* Define a route for the throttling, rendering the `Throttling` component. */}
           <Route path="/throttling" element={<Throttling />} />
 
+          {/* Define a route for the currying, rendering the `Currying` component. */}
+          <Route path="/currying" element={<Currying />} />
+
             {/* Define a route for the currying, rendering the `Currying` component. */}
-            <Route path="/currying" element={<Currying />} />
+            <Route path="/memoization" element={<Memoization />} />
         </Routes>
       </Router>
     </>
