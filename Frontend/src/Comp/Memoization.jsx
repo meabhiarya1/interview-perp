@@ -10,7 +10,7 @@ const Memoization = () => {
   };
 
 //   console.time();
-  //   console.log(calc(5000));
+//   console.log(calc(5000));
 //   console.timeEnd();
 
   const memoizedCalc = (fun) => {
@@ -26,9 +26,7 @@ const Memoization = () => {
   console.time();
   console.log(memo(5000));
   console.timeEnd();
-
-  //   console.log(calc(5000));
-
+  
   //   const memoizedCalc = React.useMemo(() => calc, []);
 
   //   console.time();
