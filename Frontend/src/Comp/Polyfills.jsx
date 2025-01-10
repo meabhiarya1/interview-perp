@@ -91,8 +91,36 @@ const Polyfills = () => {
       return context.fn(...args, ...newArgs);
     };
   };
-  const newFunc = purchaseCar.myBind(car1, "$");
-  newFunc(8000);
+  // const newFunc = purchaseCar.myBind(car1, "$");
+  // newFunc(8000);
+
+  // Design a polyfill for memoize
+  function myMemoize(fn, context) {
+    const res = {};
+    return function (...args) {
+      var argsCache = JSON.stringify(args);
+      if (!res[argsCache]) {
+        res[argsCache] = fn.call(context || this, ...args);
+      }
+      return res[argsCache];
+    };
+  }
+
+  // Heavy function
+  const clumsyProduct = (num1, num2) => {
+    for (let i; i <= 1000000000; i++) {}
+    return num1 * num2;
+  };
+
+  const memoizedClumsyProduct = myMemoize(clumsyProduct);
+
+  console.time("First Call");
+  console.log(memoizedClumsyProduct(9467, 7649));
+  console.timeEnd("First Call");
+
+  console.time("Second Call");
+  console.log(memoizedClumsyProduct(9467, 7649));
+  console.timeEnd("Second Call");
 
   return <div>Polyfills</div>;
 };
