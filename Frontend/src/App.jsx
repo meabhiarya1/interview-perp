@@ -10,6 +10,7 @@ import Throttling from "./Comp/Throttling.jsx";
 import Currying from "./Comp/Currying.jsx";
 import Memoization from "./Comp/Memoization.jsx";
 import Polyfills from "./Comp/Polyfills.jsx";
+import CallApplyBind from "./Comp/CallApplyBind.jsx";
 // Define the main App component that manages routing and page rendering.
 function App() {
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
@@ -49,8 +50,11 @@ function App() {
           {/* Define a route for the Memoization, rendering the `Memoization` component. */}
           <Route path="/memoization" element={<Memoization />} />
 
-          {/* Define a route for the currying, rendering the `Currying` component. */}
+          {/* Define a route for the Polyfills, rendering the `Polyfills` component. */}
           <Route path="/polyfills" element={<Polyfills />} />
+
+          {/* Define a route for the callApplyBind, rendering the `Call,Apply,Bind` component. */}
+          <Route path="/callApplyBind" element={<CallApplyBind />} />
         </Routes>
       </Router>
     </>

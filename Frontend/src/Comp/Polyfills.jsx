@@ -122,6 +122,9 @@ const Polyfills = () => {
   console.log(memoizedClumsyProduct(9467, 7649));
   console.timeEnd("Second Call");
 
+
+  
+
   return <div>Polyfills</div>;
 };
 
