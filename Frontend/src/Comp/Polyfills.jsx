@@ -13,7 +13,8 @@ const Polyfills = () => {
 
     return temp;
   };
-  const newArray = nums.myMap((num, index, array) => num * 3);
+
+  const newArray = nums.myMap((num, index, array) => num * 1);
   // console.log(newArray);
 
   // Design a polyfill for the Array.prototype.filter method as like filter method.
@@ -39,6 +40,7 @@ const Polyfills = () => {
     }
     return acc;
   };
+
   const sumReducedValue = nums.myReduce((acc, num, index, arr) => {
     return acc + num;
   }, 0);
@@ -64,10 +66,10 @@ const Polyfills = () => {
     context.fn = this;
     context.fn(...args);
   };
+
   // purchaseCar.myCall(car1, "$", "50000");
 
   // Design a polyfill for the Function.prototype.apply method as like apply method.
-
   Function.prototype.myApply = function (context = {}, args = []) {
     if (typeof this !== "function") {
       throw new Error(this + "It's not Callable");
@@ -79,7 +81,18 @@ const Polyfills = () => {
     context.fn = this;
     context.fn(...args);
   };
-  purchaseCar.myApply(car1, ["$", 500000]);
+
+  // purchaseCar.myApply(car1, ["$", 500000]);
+
+  // Design a polyfill for the Function.prototype.bind method as like bind method.
+  Function.prototype.myBind = function (context = {}, args = []) {
+    context.fn = this;
+    return function (...newArgs) {
+      return context.fn(...args, ...newArgs);
+    };
+  };
+  const newFunc = purchaseCar.myBind(car1, "$");
+  newFunc(8000);
 
   return <div>Polyfills</div>;
 };
