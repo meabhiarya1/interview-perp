@@ -11,6 +11,8 @@ import Currying from "./Comp/Currying.jsx";
 import Memoization from "./Comp/Memoization.jsx";
 import Polyfills from "./Comp/Polyfills.jsx";
 import CallApplyBind from "./Comp/CallApplyBind.jsx";
+import EventBubbling__EventCapturing from "./Comp/EventBubbling__EventCapturing.jsx";
+import Event_deligation from "./Comp/Event_deligation.jsx";
 // Define the main App component that manages routing and page rendering.
 function App() {
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
@@ -55,6 +57,18 @@ function App() {
 
           {/* Define a route for the callApplyBind, rendering the `Call,Apply,Bind` component. */}
           <Route path="/callApplyBind" element={<CallApplyBind />} />
+
+          {/* Define a route for the EventBubbling__EventCapturing, rendering the `EventBubbling__EventCapturing` component. */}
+          <Route
+            path="/EventBubbling__EventCapturing"
+            element={<EventBubbling__EventCapturing />}
+          />
+
+          {/* Define a route for the Event_deligation, rendering the ` Event_deligation` component. */}
+          <Route
+            path="/Event_deligation"
+            element={<Event_deligation />}
+          />
         </Routes>
       </Router>
     </>
