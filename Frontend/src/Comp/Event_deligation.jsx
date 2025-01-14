@@ -15,7 +15,7 @@ const Event_Delegation = () => {
       <div className="overflow-x-auto rounded-lg border border-gray-200">
         <table
           className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm"
-          onClick={handleClick}
+          onClick={(e) => handleClick(e)}
         >
           <thead className="ltr:text-left rtl:text-right">
             <tr>
