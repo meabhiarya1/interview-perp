@@ -13,6 +13,7 @@ import Polyfills from "./Comp/Polyfills.jsx";
 import CallApplyBind from "./Comp/CallApplyBind.jsx";
 import EventBubbling__EventCapturing from "./Comp/EventBubbling__EventCapturing.jsx";
 import Event_deligation from "./Comp/Event_deligation.jsx";
+import DeepAndShallow from "./Comp/DeepAndShallow.jsx";
 // Define the main App component that manages routing and page rendering.
 function App() {
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
@@ -65,10 +66,10 @@ function App() {
           />
 
           {/* Define a route for the Event_deligation, rendering the ` Event_deligation` component. */}
-          <Route
-            path="/Event_deligation"
-            element={<Event_deligation />}
-          />
+          <Route path="/Event_deligation" element={<Event_deligation />} />
+
+          {/* Define a route for the DeepAndShallow, rendering the `DeepAndShallow` component. */}
+          <Route path="/DeepAndShallow" element={<DeepAndShallow />} />
         </Routes>
       </Router>
     </>
