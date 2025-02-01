@@ -14,6 +14,7 @@ import CallApplyBind from "./Comp/CallApplyBind.jsx";
 import EventBubbling__EventCapturing from "./Comp/EventBubbling__EventCapturing.jsx";
 import Event_deligation from "./Comp/Event_deligation.jsx";
 import DeepAndShallow from "./Comp/DeepAndShallow.jsx";
+import Closures__LexicalScope from "./Comp/Closures__LexicalScope.jsx";
 // Define the main App component that manages routing and page rendering.
 function App() {
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
@@ -70,6 +71,12 @@ function App() {
 
           {/* Define a route for the DeepAndShallow, rendering the `DeepAndShallow` component. */}
           <Route path="/DeepAndShallow" element={<DeepAndShallow />} />
+
+          {/* Define a route for the Closures__LexicalScope, rendering the `Closures__LexicalScope` component. */}
+          <Route
+            path="/Closures__LexicalScope"
+            element={<Closures__LexicalScope />}
+          />
         </Routes>
       </Router>
     </>
