@@ -15,6 +15,8 @@ import EventBubbling__EventCapturing from "./Comp/EventBubbling__EventCapturing.
 import Event_deligation from "./Comp/Event_deligation.jsx";
 import DeepAndShallow from "./Comp/DeepAndShallow.jsx";
 import Closures__LexicalScope from "./Comp/Closures__LexicalScope.jsx";
+import This from "./Comp/This.jsx";
+
 // Define the main App component that manages routing and page rendering.
 function App() {
   const DashboardAuth = withAuth(Dashboard); // Wrap the `Dashboard` component with the `withAuth` HOC to add authentication logic.
@@ -77,6 +79,8 @@ function App() {
             path="/Closures__LexicalScope"
             element={<Closures__LexicalScope />}
           />
+
+          <Route path="/this" element={<This />} />
         </Routes>
       </Router>
     </>
