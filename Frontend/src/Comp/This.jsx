@@ -20,6 +20,12 @@ export default This;
 // fn(); // window object without strict mode and in strict mode it will be undefined
 // window.fn(); // window object
 
+// this in arrow functions
+// const fn = () => {
+//     console.log(this); // globalObject
+// }
+// fn(); // globalObject
+
 // this inside an objects's method
 
 // const student = {
@@ -87,7 +93,11 @@ export default This;
 //     function inner() {
 //       console.log(this); // globalObject
 //     }
-//     inner(); inner() is a regular function (not a method of obj). So, it has its own this. The value of this is not passed to the inner function so it will be globalObject
+//  const fn = () => {
+//   console.log(this); // globalObject
+// };
+// fn(); // globalObject
+// inner(); inner() is a regular function (not a method of obj). So, it has its own this. The value of this is not passed to the inner function so it will be globalObject
 //   },
 // };
 
